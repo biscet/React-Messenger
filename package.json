@@ -25,7 +25,7 @@
     "cash": "^0.8.0",
     "classnames": "^2.2.6",
     "file-loader": "^3.0.1",
-    "firebase": "^9.1.0",
+    "firebase": "7.20.0",
     "lodash": "^4.17.15",
     "lolex": "^4.2.0",
     "moment": "^2.24.0",

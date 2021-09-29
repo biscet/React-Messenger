@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 import "./Static/Styles/app.scss"
 
-import Main from "./Pages/Main/main"
+import Login from "./Pages/Login/login"
 
 export default hot(module)(
   class App extends Component {
@@ -13,7 +13,7 @@ export default hot(module)(
         <div className="app">
           <Router>
             <Switch>
-              <Route path="/" component={Main} />
+              <Route path="/" component={Login} />
             </Switch>
           </Router>
         </div>
