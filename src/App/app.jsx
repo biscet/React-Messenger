@@ -4,7 +4,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 import "./Static/Styles/app.scss"
 
+import { AuthProvider } from "./Contexts/auth-context"
+
 import Login from "./Pages/Login/login"
+import Chats from "./Pages/Chats/chats"
 
 export default hot(module)(
   class App extends Component {
@@ -12,9 +15,12 @@ export default hot(module)(
       return (
         <div className="app">
           <Router>
-            <Switch>
-              <Route path="/" component={Login} />
-            </Switch>
+            <AuthProvider>
+              <Switch>
+                <Route path="/chats" component={Chats} />
+                <Route path="/" component={Login} />
+              </Switch>
+            </AuthProvider>
           </Router>
         </div>
       )

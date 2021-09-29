@@ -8,7 +8,7 @@ const TerserPlugin = require("terser-webpack-plugin")
 module.exports = (env, options) => {
   const dev = options.mode === "development"
   return {
-    entry: "./src/index.jsx",
+    entry: ["babel-polyfill", "./src/index.jsx"],
     resolve: {
       extensions: [".jsx", ".js"],
     },
@@ -46,11 +46,12 @@ module.exports = (env, options) => {
           test: /\.(js|jsx)$/,
           loader: "babel-loader",
           options: {
-            presets: ["@babel/env", "@babel/react"],
+            presets: ["@babel/react", "@babel/preset-env"],
             plugins: [
               ["@babel/plugin-proposal-class-properties"],
               "babel-plugin-syntax-dynamic-import",
               "@babel/plugin-syntax-optional-chaining",
+              "transform-regenerator",
             ],
           },
         },
